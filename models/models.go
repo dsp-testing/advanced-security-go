@@ -32,7 +32,7 @@ func AllBooks() ([]Book, error) {
 
 // Query for books by Name
 func NameQuery(r string) ([]Book, error) {
-	rows, err := DB.Query(fmt.Sprintf("SELECT * FROM books WHERE name = '%s'", r))
+	rows, err := DB.Query(fmt.Sprintf("SELECT * FROM books WHERE name = '?'", r))
 	if err != nil {
 		return nil, err
 	}
